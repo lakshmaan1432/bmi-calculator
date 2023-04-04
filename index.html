@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        fieldset {
+            text-align: center;
+            border-radius: 10px;
+            background-color: lightblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        button {
+            height: 50px;
+            width: 100px;
+            background-color: lightgreen;
+            border-radius: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 400px;
+        }
+
+        div {
+            width: 50%;
+            margin: auto;
+        }
+
+        input {
+            border-radius: 6px;
+            border: solid;
+            border-width: 1px;
+            margin-bottom: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    <br>
+    <div>
+
+        <fieldset>
+            <label for="name">Height in meters</label>
+            <input type="text" id="height">
+            <br>
+            <label for="name">Weight in kilograms</label>
+            <input type="text" id="weight">
+            <br>
+            <br>
+            <br>
+            <button onclick="calculatebmi()">Calculate</button>
+            <br>
+            <p id="bmi">Your BMI will appear here!</p>
+            <p id="result"> Your result will appear here! </p>
+            <img src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/306/306129/bmi-for-men-and-women.png?w=1155&h=735" alt="">
+
+        </fieldset>
+
+    </div>
+    <script>
+        function calculatebmi() {
+            let height = document.getElementById("height").value
+            let weight = document.getElementById("weight").value
+            let bmi = weight / (height ** 2)
+            document.getElementById("bmi").innerText = bmi
+            if (bmi < 18) {
+                document.getElementById("result").innerText = "You are underweight."
+            }
+            if (bmi > 25) {
+                document.getElementById("result").innerText = "You are overweight."
+            }
+        }    
+    </script>
+</body>
+
+</html>
